@@ -1,7 +1,7 @@
 import MergeSort.MergeSort;
+import SortInterfaces.Sort;
 
 import java.util.*;
-import Comparator.MyCmp;
 
 public class Sorting <T extends List>{
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Sorting <T extends List>{
         a.add(2);
         a.add(1);
 
-        MergeSort m = new MergeSort();
+        Sort m = new MergeSort();
 
         m.sortIt(a);
 
