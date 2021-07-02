@@ -1,7 +1,7 @@
 import MergeSort.MergeSort;
-import MergeSort.MyCmp;
 
 import java.util.*;
+import Comparator.MyCmp;
 
 public class Sorting <T extends List>{
     public static void main(String[] args) {
@@ -14,11 +14,7 @@ public class Sorting <T extends List>{
 
         MergeSort m = new MergeSort();
 
-        m.sortIt(a, new MyCmp<Integer>() {
-            public boolean isLessOrEqual(Integer a, Integer b){
-                return a <= b;
-            }
-        });
+        m.sortIt(a);
 
         for(int i = 0; i < a.size(); i++) System.out.println(a.get(i));
     }

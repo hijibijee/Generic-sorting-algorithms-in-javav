@@ -1,9 +1,23 @@
 package MergeSort;
 
+import Comparator.MyCmp;
+
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class MergeSort <T extends List<U>, U> {
+public class MergeSort <T extends List<U>, U extends Comparable<U> > {
+
+    public void sortIt(T a){
+        sortIt(a, new MyCmp<U>() {
+            @Override
+            public boolean isLessOrEqual(U a, U b) {
+                int x = a.compareTo(b);
+
+                return (x <= 0);
+            }
+        });
+    }
 
     public void sortIt(T a, MyCmp<U> cmp){
         ArrayList<U> temp = new ArrayList<>();
