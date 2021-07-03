@@ -1,5 +1,8 @@
 import MergeSort.MergeSort;
 import QuickSort.QuickSort;
+import BubbleSort.BubbleSort;
+import InsertionSort.InsertionSort;
+import SelectionSort.SelectionSort;
 import SortInterfaces.Sort;
 
 import java.util.*;
@@ -13,7 +16,7 @@ public class Sorting <T extends List>{
         a.add(2);
         a.add(1);
 
-        Sort m = new QuickSort();
+        Sort<List<Integer>, Integer> m = new InsertionSort<List<Integer>, Integer>();
 
         m.sortIt(a);
 

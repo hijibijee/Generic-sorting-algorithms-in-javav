@@ -4,6 +4,7 @@ import SortInterfaces.MyCmp;
 import SortInterfaces.Sort;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MergeSort <T extends List<U>, U extends Comparable<U>>
@@ -50,7 +51,7 @@ public class MergeSort <T extends List<U>, U extends Comparable<U>>
         ArrayList<U> temp = new ArrayList<>(a);
 
         mergeIt(temp, cmp);
-
-        for(int i = 0; i < a.size(); i++) a.set(i, temp.get(i));
+        a.clear();
+        a.addAll(temp);
     }
 }

@@ -3,6 +3,11 @@ package SortInterfaces;
 import java.util.List;
 
 public interface Sort <T extends List<U>, U extends Comparable<U>>{
+    public default void swap(T a, int i, int j){
+        U tmp = a.get(j);
+        a.set(j, a.get(i));
+        a.set(i, tmp);
+    }
     public default void sortIt(T a){
         sortIt(a, new MyCmp<U>() {
             @Override

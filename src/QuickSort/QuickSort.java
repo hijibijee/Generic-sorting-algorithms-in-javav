@@ -14,10 +14,11 @@ public class QuickSort <T extends List<U>, U extends Comparable<U>> implements S
 
         partIt(temp, cmp, 0, a.size() - 1);
 
-        for(int i = 0; i < a.size(); i++) a.set(i, temp.get(i));
+        a.clear();
+        a.addAll(temp);
     }
 
-    void swap(ArrayList<U> a, int i, int j){
+    private void swap(ArrayList<U> a, int i, int j){
         U temp = a.get(j);
         a.set(j, a.get(i));
         a.set(i, temp);
