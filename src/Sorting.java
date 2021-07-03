@@ -1,4 +1,5 @@
 import MergeSort.MergeSort;
+import QuickSort.QuickSort;
 import SortInterfaces.Sort;
 
 import java.util.*;
@@ -12,7 +13,7 @@ public class Sorting <T extends List>{
         a.add(2);
         a.add(1);
 
-        Sort m = new MergeSort();
+        Sort m = new QuickSort();
 
         m.sortIt(a);
 

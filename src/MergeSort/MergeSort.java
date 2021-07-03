@@ -9,7 +9,7 @@ import java.util.List;
 public class MergeSort <T extends List<U>, U extends Comparable<U>>
         implements Sort <T, U> {
 
-    ArrayList<U> mergeIt(ArrayList<U> a, MyCmp<U> cmp){
+    private ArrayList<U> mergeIt(ArrayList<U> a, MyCmp<U> cmp){
         int n = a.size();
 
         if(n == 1) return a;
@@ -46,22 +46,8 @@ public class MergeSort <T extends List<U>, U extends Comparable<U>>
     }
 
     @Override
-    public void sortIt(T a) {
-        sortIt(a, new MyCmp<U>() {
-            @Override
-            public boolean isLessOrEqual(U a, U b) {
-                int x = a.compareTo(b);
-
-                return (x <= 0);
-            }
-        });
-    }
-
-    @Override
     public void sortIt(T a, MyCmp<U> cmp) {
-        ArrayList<U> temp = new ArrayList<>();
-
-        a.forEach( u -> temp.add(u));
+        ArrayList<U> temp = new ArrayList<>(a);
 
         mergeIt(temp, cmp);
 
